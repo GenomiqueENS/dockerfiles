@@ -33,4 +33,4 @@ RUN git checkout STAR_2.4.0g1
 WORKDIR /usr/local/STAR/source/ 
 RUN pwd
 RUN make STAR
-ENV PATH /usr/local/STAR/source/STAR:$PATH
+ENV PATH /usr/local/STAR/source:$PATH
