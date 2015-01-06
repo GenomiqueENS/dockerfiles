@@ -4,7 +4,7 @@
 ############################################################
 
 # Set the base image to Ubuntu
-FROM ubuntu:12.04
+FROM ubuntu:14.04
 
 # File Author / Maintainer
 MAINTAINER Sophie Lemoine <slemoine@biologie.ens.fr>
@@ -35,8 +35,10 @@ RUN cpanm CPAN::Meta \
  Data::Stag \
  Config::Simple \
  Statistics::Lite \
- Statistics::Descriptive \ 
- Archive::Zip
+ Statistics::Descriptive 
+
+RUN apt-get install --yes \
+ libarchive-zip-perl
 
 # Install related DB modules
 RUN apt-get install --yes \
