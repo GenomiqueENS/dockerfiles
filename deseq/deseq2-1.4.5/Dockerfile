@@ -1,5 +1,5 @@
 ############################################################
-# Dockerfile to build DESeq container images
+# Dockerfile to build DESeq2 container images
 # Based on Ubuntu
 ############################################################
 
@@ -31,10 +31,13 @@ RUN apt-get install --yes r-base=3.1.0-1precise0 r-base-core=3.1.0-1precise0 r-b
 RUN echo 'local({r <- getOption("repos"); r["CRAN"] <- "http://cran.r-project.org"; options(repos=r)})' > ~/.Rprofile
 
 # Install bioconductor
-RUN R -e 'source("http://bioconductor.org/biocLite.R"); biocLite("DESeq2")'
+RUN R -e 'source("http://bioconductor.org/biocLite.R"); biocLite("DESeq2"); install.packages("FactoMineR")'
 
 # Cleanup
 RUN apt-get clean
 
 # Default command to execute at startup of the container
 CMD R --no-save
+
+# Install vim
+RUN apt-get install --yes vim
