@@ -6,10 +6,13 @@
 ############################################################
 
 # Set the base image to CentOS 5
-FROM fatherlinux/centos5-base:latest
+FROM centos:5
 
 # File Author / Maintainer
 MAINTAINER Laurent Jourdren <jourdren@biologie.ens.fr>
+
+# Install wget
+RUN yum -y install wget
 
 # Download Bcl2FastQ
 RUN cd /tmp ; wget ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/Software/bcl2fastq/bcl2fastq-1.8.4-Linux-x86_64.rpm
