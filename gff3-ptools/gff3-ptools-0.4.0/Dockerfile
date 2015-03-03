@@ -20,6 +20,7 @@ RUN apt-get install --yes \
  xdg-utils \
  libcurl3 \
  vim \
+ wget \
  rake 
 
 # install DMD
