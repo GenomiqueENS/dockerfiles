@@ -30,6 +30,9 @@ WORKDIR /usr/local/DWGSIM
 RUN git submodule init
 RUN git submodule update
 RUN make
-ENV PATH /usr/local/DWGSIM/dwgsim:/usr/local/DWGSIM/dwgsim_eval:/usr/local/DWGSIM/dwgims_pileup_eval.pl:$PATH
+RUN ln -s /usr/local/DWGSIM/dwgsim /usr/local/bin/dwgsim
+RUN ln -s /usr/local/DWGSIM/dwgsim_eval /usr/local/bin/dwgsim_eval
+RUN ln -s /usr/local/DWGSIM/dwgims_pileup_eval.pl /usr/local/bin/dwgims_pileup_eval.pl
+
 RUN apt-get clean 
 
