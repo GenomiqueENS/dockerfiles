@@ -15,9 +15,6 @@ RUN apt-get update
 #Install ensembl api  75
 RUN apt-get install -y git
 WORKDIR /usr/local/
-#RUN git clone https://github.com/Ensembl/ensembl-git-tools.git
-#ENV PATH /usr/local/ensembl-git-tools/bin:$PATH
-#RUN ln -s /usr/local/ensembl-git-tools/bin/* /usr/local/bin
 RUN git clone https://github.com/Ensembl/ensembl.git
 WORKDIR /usr/local/ensembl/
 RUN git checkout release/78
@@ -86,8 +83,15 @@ WORKDIR /usr/local/kent/src/utils/bigWigToWig
 RUN make
 WORKDIR /usr/local/kent/src/utils/bigBedToBed 
 RUN make
-ENV PATH /usr/local/kent/src/utils/wigToBigWig:/usr/local/kent/src/utils/bedGraphToBigWig:/usr/local/kent/src/utils/bedToBigBed: /usr/local/kent/src/utils/bigWigInfo:/usr/local/kent/src/utils/bigBedInfo:$PATH
-ENV PATH /usr/local/kent/src/utils/bigWigToBedGraph:/usr/local/kent/src/utils/bigWigToWig:/usr/local/kent/src/utils/bigBedToBed:/usr/local/kent/src/utils/bigBedToBed:$PATH
+RUN ln -s /usr/local/kent/src/utils/wigToBigWig /usr/local/bin/wigToBigWig
+RUN ln -s /usr/local/kent/src/utils/wigToBigWig /usr/local/bin/bedGraphToBigWig
+RUN ln -s /usr/local/kent/src/utils/wigToBigWig /usr/local/bin/bedToBigBed
+RUN ln -s /usr/local/kent/src/utils/wigToBigWig /usr/local/bin/bigWigInfo
+RUN ln -s /usr/local/kent/src/utils/wigToBigWig /usr/local/bin/bigBedInfo
+
+RUN ln -s /usr/local/kent/src/utils/wigToBigWig /usr/local/bin/bigWigToBedGraph
+RUN ln -s /usr/local/kent/src/utils/wigToBigWig /usr/local/bin/bigWigToWig
+RUN ln -s /usr/local/kent/src/utils/wigToBigWig /usr/local/bin/bigBedToBed
 
 #Install perl modules related to JKENT lib
 RUN apt-get install -y \
@@ -126,6 +130,6 @@ RUN cpanm \
  Statistics::LineFit
 
 
-RUN cpanm -vf TJPARNELL/Bio-ToolBox-1.23.tar.gz 
+RUN cpanm -v TJPARNELL/Bio-ToolBox-1.24001.tar.gz 
 
 
