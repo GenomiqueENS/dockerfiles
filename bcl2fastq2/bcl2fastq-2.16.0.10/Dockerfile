@@ -12,7 +12,7 @@ FROM centos:5
 MAINTAINER Laurent Jourdren <jourdren@biologie.ens.fr>
 
 # Download Bcl2FastQ
-ADD http://support.illumina.com/content/dam/illumina-support/documents/downloads/software/bcl2fastq/bcl2fastq2-v2.16.0.10-Linux-x86_64.rpm /tmp/
+ADD http://transcriptome.ens.fr/leburon/downloads/illumina/bcl2fastq2-v2.16.0.10-Linux-x86_64.rpm /tmp/
 
 # Install OLB dependencies
 RUN yum -y --nogpgcheck localinstall /tmp/bcl2fastq2-*.rpm
