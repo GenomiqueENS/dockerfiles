@@ -15,7 +15,7 @@ MAINTAINER Laurent Jourdren <jourdren@biologie.ens.fr>
 RUN yum -y install wget
 
 # Download Bcl2FastQ
-RUN cd /tmp ; wget ftp://webdata:webdata@ussd-ftp.illumina.com/Downloads/Software/bcl2fastq/bcl2fastq-1.8.4-Linux-x86_64.rpm
+ADD http://transcriptome.ens.fr/leburon/downloads/illumina/bcl2fastq-1.8.4-Linux-x86_64.rpm /tmp/
 
 # Install OLB dependencies
 RUN yum -y --nogpgcheck localinstall /tmp/bcl2fastq-*.rpm
