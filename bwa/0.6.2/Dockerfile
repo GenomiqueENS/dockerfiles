@@ -33,7 +33,7 @@ RUN make
 RUN cp -p bwa /usr/local/bin
 
 # Cleanup
-RUN rm -rf /tmp/bwa-$VERSION
+RUN rm -rf /tmp/bwa-0.6.2
 
 RUN apt-get clean
 
