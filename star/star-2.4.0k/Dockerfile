@@ -29,7 +29,7 @@ RUN pwd
 RUN git clone https://github.com/alexdobin/STAR.git
 WORKDIR /usr/local/STAR/
 RUN pwd
-RUN git checkout STAR_2.4.0j
+RUN git checkout STAR_2.4.0k
 WORKDIR /usr/local/STAR/source/ 
 RUN pwd
 RUN make STAR
