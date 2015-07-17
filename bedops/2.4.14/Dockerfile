@@ -38,9 +38,9 @@ WORKDIR /usr/local/bedops_v2.4.1
 RUN wget https://github.com/bedops/bedops/releases/download/v2.4.14/bedops_linux_x86_64-v2.4.14.tar.bz2
 RUN tar xjf bedops_linux_x86_64-v2.4.14.tar.bz2 
 RUN ls
+WORKDIR /usr/local/bedops_v2.4.1/bin
 RUN chown -R root ./*
 RUN chgrp -R root ./*
-WORKDIR /usr/local/bedops_v2.4.1/bin
 RUN ln -s ./* /usr/local/bin
 
 
