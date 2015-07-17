@@ -39,9 +39,7 @@ RUN wget https://github.com/bedops/bedops/releases/download/v2.4.14/bedops_linux
 RUN tar xjf bedops_linux_x86_64-v2.4.14.tar.bz2 
 RUN ls
 WORKDIR /usr/local/bedops_v2.4.1/bin
-RUN chown -R root ./*
-RUN chgrp -R root ./*
-RUN ln -s ./* /usr/local/bin
+RUN cp ./* /usr/local/bin/
 
 
 # Cleanup                                                                                                                                                                                                                                                                                                             
