@@ -3,7 +3,6 @@ FROM centos:5
 # File Author / Maintainer
 MAINTAINER Laurent Jourdren <jourdren@biologie.ens.fr>
 
-
 # Install wget
 RUN yum -y install wget
 
@@ -12,6 +11,8 @@ RUN (cd /tmp && wget --no-check-certificate https://support.illumina.com/content
 
 # Install OLB dependencies
 RUN yum -y --nogpgcheck localinstall /tmp/bcl2fastq2-*.rpm
+
+RUN (cd /usr/local/bin && ln -s ../share/)
 
 # Cleanup
 RUN rm -rf /tmp/*.rpm
