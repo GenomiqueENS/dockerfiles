@@ -1,5 +1,5 @@
 ############################################################
-# Dockerfile to build biopython container images
+# Dockerfile to build a container with biopython and python facilities to work on biological object
 # Based on Ubuntu 
 ############################################################
 
@@ -29,3 +29,13 @@ RUN apt-get build-dep --yes python-biopython
 RUN apt-get install --yes \
  python-biopython=1.63-1 \
  python-biopython-sql=1.63-1
+
+# Install pip
+RUN apt-get install --yes \
+ python-pip
+
+# Install gff parsing lib (brad Chapman gff parsing lib)
+RUN pip install bcbio-gff
+# Install pyfasta
+RUN pip install pyfasta
+
