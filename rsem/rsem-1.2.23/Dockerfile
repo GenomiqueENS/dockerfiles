@@ -1,10 +1,10 @@
-###########################################################
-# Dockerfile to build rsem container images
+#############################################################
+# Dockerfile to build rsem container images integrating STAR 
 # Based on Ubuntu
-############################################################
+#############################################################
 
 # Set the base image to Ubuntu
-FROM ubuntu:14.04
+FROM genomicpariscentre/star
 
 # File Author / Maintainer
 MAINTAINER Sophie Lemoine <slemoine@biologie.ens.fr>
