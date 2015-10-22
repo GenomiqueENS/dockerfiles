@@ -19,13 +19,13 @@ RUN apt-get update && apt-get install --yes \
     git
 
 # Compile and install STAR
-RUN cd /tmp && \
-    git clone https://github.com/alexdobin/STAR.git && \
-    cd STAR && \
-    git checkout STAR_2.4.2a && \
-    cd source && \
-    make STAR && \
-    mv STAR /usr/local/bin/STAR
+WORKDIR /tmp 
+RUN git clone https://github.com/alexdobin/STAR.git
+WORKDIR /tmp/STAR
+RUN git checkout STAR_2.4.2a
+WORKDIR /tmp/STAR/source
+RUN make STAR 
+RUN mv STAR /usr/local/bin/
 
 # Cleanup                                                                                                                                                                                                                                                                                                             
 RUN rm -rf /tmp/STAR ; apt-get clean ; apt-get remove --yes --purge build-essential gcc-multilib apt-utils zlib1g-dev vim-common git
