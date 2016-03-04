@@ -3,8 +3,8 @@
 # Based on Ubuntu
 #############################################################
 
-# Set the base image to R
-FROM r-base:3.2.3 
+# Set the base image to Ubuntu
+FROM ubuntu:14.04
 
 # File Author / Maintainer
 MAINTAINER Sophie Lemoine <slemoine@biologie.ens.fr>
@@ -20,6 +20,9 @@ RUN apt-get install --yes \
  zlib1g-dev \
  perl \
  perl-base \
+ r-base \
+ r-base-core \
+ r-base-dev \
  git
 
 # Compile and install STAR
