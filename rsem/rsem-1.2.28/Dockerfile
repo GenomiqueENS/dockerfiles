@@ -3,8 +3,8 @@
 # Based on Ubuntu
 #############################################################
 
-# Set the base image to Ubuntu
-FROM ubuntu:14.04 
+# Set the base image to R
+FROM r-base:3.2.3 
 
 # File Author / Maintainer
 MAINTAINER Sophie Lemoine <slemoine@biologie.ens.fr>
@@ -20,17 +20,13 @@ RUN apt-get install --yes \
  zlib1g-dev \
  perl \
  perl-base \
- r-base \
- r-base-core \
- r-base-dev \
- vim-common \
  git
 
 # Compile and install STAR
 WORKDIR /usr/local
 RUN git clone https://github.com/alexdobin/STAR.git
 WORKDIR /usr/local/STAR
-RUN git checkout STAR_2.5.0a 
+RUN git checkout 2.5.1b 
 WORKDIR /usr/local/STAR
 RUN make STAR 
 RUN ln -s ./STAR /usr/local/bin/STAR
@@ -42,7 +38,7 @@ RUN apt-get install --yes bowtie
 # Install RSEM 
 WORKDIR /usr/local/
 RUN pwd
-RUN git https://github.com/deweylab/RSEM.git
+RUN git clone https://github.com/deweylab/RSEM.git
 WORKDIR /usr/local/RSEM
 RUN pwd
 RUN git checkout v1.2.28
