@@ -14,14 +14,14 @@ RUN apt-get -y install wget
 RUN apt-get -y install python
 RUN apt-get -y install gzip
 
-# Install cutadapt version 1.8.1
+# Install cutadapt 
 WORKDIR /tmp/
 
 RUN wget https://github.com/ComputationalSystemsBiology/EoulsanDockerFiles/raw/master/TrimAdapt/cutadapt-1.8.1.tar.gz
 
 RUN tar -xzf cutadapt-1.8.1.tar.gz
 
-# Install Trim_Galore version 0.4.1
+# Install Trim_Galore
 
 RUN wget https://github.com/ComputationalSystemsBiology/EoulsanDockerFiles/raw/master/TrimAdapt/trim_galore_v0.4.1.zip
 
@@ -43,4 +43,18 @@ RUN printf '1_trimmed\\' >> RenameOutput.sh
 RUN printf '2/" | xargs -Ifullname basename fullname | xargs -Imyname mv `dirname $2`/myname $2 \n' >> RenameOutput.sh
 RUN chmod +x RenameOutput.sh
 
- 
+RUN touch RenameOutput2.sh
+RUN printf "#!/bin/bash\n" >> RenameOutput2.sh
+RUN printf 'ls $1 | sed --expression="s/\([^\.]*\)\(.*\)/\\' >> RenameOutput2.sh
+RUN printf '1_val_1\\' >> RenameOutput2.sh
+RUN printf '2/" | xargs -Ifullname basename fullname | xargs -Imyname mv `dirname $2`/myname $2 \n' >> RenameOutput2.sh
+RUN chmod +x RenameOutput2.sh
+
+RUN touch RenameOutput3.sh
+RUN printf "#!/bin/bash\n" >> RenameOutput3.sh
+RUN printf 'ls $1 | sed --expression="s/\([^\.]*\)\(.*\)/\\' >> RenameOutput3.sh
+RUN printf '1_val_2\\' >> RenameOutput3.sh
+RUN printf '2/" | xargs -Ifullname basename fullname | xargs -Imyname mv `dirname $2`/myname $2 \n' >> RenameOutput3.sh
+RUN chmod +x RenameOutput3.sh 
+
+
