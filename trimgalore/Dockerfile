@@ -1,5 +1,5 @@
 ###########################################################
-# Dockerfile to build image for trimAdapt step in eoulsan
+# Dockerfile to build image for Trim Galore! step in eoulsan
 # Based on Ubuntu
 ###########################################################
 
