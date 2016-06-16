@@ -17,6 +17,7 @@ RUN apt-get update && \
 			  python-pip \
 			  libagg-dev \
 			  libqhull6 \
+			  libhts0 \
 			  libcurl4-openssl-dev \
                           libfreetype6-dev 
 
@@ -29,8 +30,13 @@ RUN pip install tornado
 RUN pip install pyparsing
 RUN pip install matplotlib 
 RUN pip install bx-python
-RUN pip install pysam 
 RUN pip install pyBigWig
+
+
+RUN git clone --branch 1.2 https://github.com/samtools/htslib.git && \ 
+    git clone --branch 1.2 https://github.com/samtools/bcftools.git && \ 
+    make -C bcftools && cp bcftools/bcftools /usr/bin && \ 
+    rm -rf bcftools htslib
 
 
 # Install Deeptools
