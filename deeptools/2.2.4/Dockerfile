@@ -33,11 +33,18 @@ RUN pip install bx-python
 RUN pip install pyBigWig
 
 
-RUN git clone --branch 1.2 https://github.com/samtools/htslib.git && \ 
-    git clone --branch 1.2 https://github.com/samtools/bcftools.git && \ 
-    make -C bcftools && cp bcftools/bcftools /usr/bin && \ 
-    rm -rf bcftools htslib
+RUN git clone --branch 1.3 https://github.com/samtools/htslib.git
+WORKDIR /htslib
+RUN make
+RUN make install
 
+ENV HTSLIB_LIBRARY_DIR=/usr/local/lib
+ENV HTSLIB_INCLUDE_DIR=/usr/local/include
+ENV USER="root"
+
+WORKDIR / 
+
+RUN pip install pysam
 
 # Install Deeptools
 WORKDIR /usr/local/
@@ -47,4 +54,3 @@ RUN git checkout 2.2.4
 RUN python setup.py install 
 
 RUN apt-get clean
-
