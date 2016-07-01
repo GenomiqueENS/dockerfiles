@@ -22,8 +22,7 @@ RUN wget https://genome.ucsc.edu/goldenPath/help/hg19.chrom.sizes
 
 RUN chmod +x bedToBigBed
 
-RUN cp narrowPeak.as broadPeak.as
-RUN sed '13d' broadPeak.as > broadPeak.as
+RUN sed '13d' narrowPeak.as > broadPeak.as
 
 WORKDIR /
 
