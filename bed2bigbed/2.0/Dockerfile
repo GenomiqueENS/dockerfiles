@@ -19,6 +19,7 @@ RUN wget http://hgdownload.cse.ucsc.edu/admin/exe/linux.x86_64/bedToBigBed
 RUN wget https://raw.githubusercontent.com/ENCODE-DCC/kentUtils/master/src/hg/lib/encode/narrowPeak.as
 RUN wget https://raw.githubusercontent.com/igvteam/igv/master/resources/chromSizes/mm10.chrom.sizes
 RUN wget https://genome.ucsc.edu/goldenPath/help/hg19.chrom.sizes
+RUN wget https://genome.ucsc.edu/goldenPath/help/hg38.chrom.sizes
 
 RUN chmod +x bedToBigBed
 
