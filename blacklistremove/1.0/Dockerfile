@@ -7,7 +7,7 @@
 FROM ubuntu:14.04  
 
 # File Author / Maintainer
-MAINTAINER Sophie Lemoine <slemoine@biologie.ens.fr>
+MAINTAINER Cedric Michaud
 
 # Update the repository sources list
 RUN apt-get update
