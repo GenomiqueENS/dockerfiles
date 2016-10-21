@@ -55,14 +55,15 @@ RUN make install
 # Download and install bwa 
 WORKDIR /usr/local
 RUN git clone https://github.com/lh3/bwa.git
-RUN git checkout v0.7.15
 WORKDIR /usr/local/bwa
+RUN git checkout v0.7.15
 RUN make 
 RUN cp bwa /usr/local/bin
 
 #Download and install nanook
 WORKDIR /usr/local
 RUN git clone https://github.com/TGAC/NanoOK.git
+WORKDIR /usr/local/NanoOK
 RUN git checkout v0.79
 ENV NANOOK_DIR /usr/local/NanoOK
 ENV PATH /usr/local/NanoOK/bin:$PATH
