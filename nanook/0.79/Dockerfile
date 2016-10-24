@@ -32,6 +32,7 @@ RUN apt-get update && apt-get install --yes \
  mercurial \
  samtools \
  libbam-dev \
+ sed \
  tar
 
 # Download SZIP
@@ -63,8 +64,11 @@ RUN cp bwa /usr/local/bin
 #Download and install nanook
 WORKDIR /usr/local
 RUN git clone https://github.com/TGAC/NanoOK.git
-WORKDIR /usr/local/NanoOK
-RUN git checkout v0.79
+#RUN git checkout v0.79
+ENV NANOOK_JAVA_ARGS -Xmx4096m
+WORKDIR /usr/local/NanoOK/bin
+RUN sed -i '/\#\!\/bin\/sh/a if [ -z \"$NANOOK_JAVA_ARGS\" ] ; then' nanook
+RUN sed -i '/JAVA_ARGS=\"-Xmx2048m\"/a else \n   JAVA_ARGS=$NANOOK_JAVA_ARGS\n fi' nanook
 ENV NANOOK_DIR /usr/local/NanoOK
 ENV PATH /usr/local/NanoOK/bin:$PATH
 # Cleanup
