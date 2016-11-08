@@ -25,7 +25,9 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9 && \
                        python-setuptools \
                        python-pip \
                        python-dev \
-                       cython \
+                       python-tk \
+		       python-matplotlib \
+		       cython \
                        libhdf5-serial-dev \
                        libfreetype6-dev \
                        r-base python-rpy2 && \
