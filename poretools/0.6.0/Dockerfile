@@ -21,27 +21,39 @@ RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys E084DAB9 && \
     echo 'deb http://cran.rstudio.com/bin/linux/ubuntu trusty/' >> /etc/apt/sources.list && \
     apt-get update && \
     apt-get -y install git \
-                       python-tables \
-                       python-setuptools \
-                       python-pip \
-                       python-dev \
-                       python-tk \
-		       python-matplotlib \
-		       cython \
                        libhdf5-serial-dev \
                        libfreetype6-dev \
-                       r-base python-rpy2 && \
-    pip install numexpr --upgrade && \
-    Rscript -e 'options("repos" = c(CRAN = "http://cran.rstudio.com/")); install.packages("codetools"); install.packages("MASS"); install.packages("ggplot2")'
+                       r-base \ 
+		       pkg-config \
+                       python-setuptools \
+                       python-dev \
+                       python-tables \
+                       python-pip 
+
+RUN pip install numpy
+RUN pip install scipy 
+RUN pip install matplotlib
+RUN pip install seaborn
+RUN pip install Cython --install-option="--no-cython-compile"
+RUN pip install numexpr --upgrade
+                       
+RUN apt-get -y install python-pandas \
+		       python-tk \
+		       python-rpy2
+
+RUN Rscript -e 'options("repos" = c(CRAN = "http://cran.rstudio.com/")); install.packages("codetools"); install.packages("MASS"); install.packages("ggplot2")'
 
 # Install poretools
-RUN git clone https://github.com/arq5x/poretools /tmp/poretools && \
-    cd /tmp/poretools && \
-    git checkout v0.6.0 && \
-    ln -s /usr/include/freetype2/ft2build.h /usr/include/ && \
-    python setup.py install ; \
-    python setup.py install ; \
-    python setup.py install
+RUN git clone https://github.com/arq5x/poretools /tmp/poretools
+WORKDIR /tmp/poretools
+RUN git checkout v0.6.0
+RUN ln -s /usr/include/freetype2/ft2build.h /usr/include/
+RUN python setup.py install
+
+
+# Cleanup
+RUN rm -rf /tmp/poretools
+RUN apt-get clean
 
 ############## INSTALLATION END ##############
 
