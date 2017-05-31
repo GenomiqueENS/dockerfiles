@@ -10,7 +10,7 @@ FROM genomicpariscentre/scran:1.0.4
 MAINTAINER Geoffray Brelurut <brelurut@biologie.ens.fr>
 
 # Install required programs then clean up
-RUN R -e 'install.packages("Rtsne"); install.packages(FactoMineR)'; \
+RUN R -e 'install.packages("Rtsne"); install.packages("FactoMineR")'; \
 mkdir /scripts;\
 cd /scripts;\
 apt-get install --yes wget;\
