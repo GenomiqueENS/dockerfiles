@@ -10,7 +10,7 @@ FROM genomicpariscentre/ggplot2:2.1.0
 MAINTAINER Geoffray Brelurut <brelurut@biologie.ens.fr>
 
 # Install required programs then clean up
-mkdir /scripts;\
+RUN mkdir /scripts;\
 cd /scripts;\
 apt-get install --yes wget;\
 wget https://github.com/GBrelurut/Single_cell_development/tree/master/R/SCQualityChecking.R;\
