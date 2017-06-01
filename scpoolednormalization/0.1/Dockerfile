@@ -14,7 +14,7 @@ RUN R -e 'install.packages("Rtsne"); install.packages("FactoMineR")'; \
 mkdir /scripts;\
 cd /scripts;\
 apt-get install --yes wget;\
-wget https://github.com/GBrelurut/Single_cell_development/tree/master/R/SCSpikelessPooledNormalization.R;\
+wget https://raw.githubusercontent.com/GBrelurut/Single_cell_development/master/R/SCSpikelessPooledNormalization.R;\
 apt-get clean;\
 apt-get remove --purge --yes wget;
 
