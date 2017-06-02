@@ -7,7 +7,7 @@
 FROM ubuntu:12.04
 
 # File Author
-MAINTAINER Geoffray Brelurut
+MAINTAINER Geoffray Brelurut <brelurut@biologie.ens.fr>
 
 # Install required programs then clean up
 RUN echo "deb http://cran.r-project.org/bin/linux/ubuntu precise/" > /etc/apt/sources.list.d/cran.list; \
@@ -35,8 +35,10 @@ RUN echo "deb http://cran.r-project.org/bin/linux/ubuntu precise/" > /etc/apt/so
 	r-cran-spatial=7.3-6-1precise0 \
 	r-cran-survival=2.37-7-1precise0 \
 	wget; \
-	wget http://cran.r-project.org/src/contrib/Archive/Rcpp/Rcpp_0.11.1.tar.gz; \
-	R CMD INSTALL  "Rcpp_0.11.1.tar.gz"; \
+	wget http://cran.r-project.org/src/contrib/Archive/Rcpp/Rcpp_0.12.0.tar.gz; \
+	R CMD INSTALL  "Rcpp_0.12.0.tar.gz"; \
+	wget http://cran.r-project.org/src/contrib/Archive/tibble/tibble_1.3.0.tar.gz;  \
+	R CMD INSTALL  "tibble_1.3.0.tar.gz"; \
 	R -e " install.packages('ggplot2', repos='http://cran.r-project.org')"; \
 	apt-get remove --purge --yes wget; \
 	apt-get clean;
