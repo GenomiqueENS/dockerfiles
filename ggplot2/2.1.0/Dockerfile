@@ -36,8 +36,8 @@ RUN echo "deb http://cran.r-project.org/bin/linux/ubuntu precise/" > /etc/apt/so
 	r-cran-survival=2.37-7-1precise0 \
 	wget; \
 	wget http://cran.r-project.org/src/contrib/Archive/Rcpp/Rcpp_0.12.0.tar.gz; \
-	R CMD INSTALL  "Rcpp_0.12.10.tar.gz"; \
-	wget http://cran.r-project.org/src/contrib/Archive/tibble/tibble_1.3.0.tar.gz  \
+	R CMD INSTALL  "Rcpp_0.12.0.tar.gz"; \
+	wget http://cran.r-project.org/src/contrib/Archive/tibble/tibble_1.3.0.tar.gz;  \
 	R CMD INSTALL  "tibble_1.3.0.tar.gz"; \
 	R -e " install.packages('ggplot2', repos='http://cran.r-project.org')"; \
 	apt-get remove --purge --yes wget; \
