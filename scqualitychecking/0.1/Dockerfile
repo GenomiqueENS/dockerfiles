@@ -1,10 +1,10 @@
 ####################################################
 #    Dockerfile to build SC Quality Checking	   #
 #	  		container images	   		   #
-#              Based on scran 1.0.4                #
+#              Based on ggplot2 2.2.1              #
 ####################################################
 # Set the base image to ggplot2
-FROM genomicpariscentre/ggplot2:2.1.0
+FROM genomicpariscentre/ggplot2:2.2.1
 
 # File Author
 MAINTAINER Geoffray Brelurut <brelurut@biologie.ens.fr>
