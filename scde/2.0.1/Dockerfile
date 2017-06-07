@@ -53,7 +53,7 @@ RUN echo "deb http://cran.r-project.org/bin/linux/ubuntu trusty/" > /etc/apt/sou
      R CMD INSTALL BiocGenerics_0.18.0.tar.gz Biobase_2.32.0.tar.gz pcaMethods_1.64.0.tar.gz; \
      wget http://cran.rstudio.com/src/contrib/Archive/lattice/lattice_0.20-33.tar.gz \
           http://cran.rstudio.com/src/contrib/Archive/flexmix/flexmix_2.3-13.tar.gz; \
-     R CMD INSTALL lattice_0.20-33.tar.gz  flexmix_2.3-13.tar.gz;
+     R CMD INSTALL lattice_0.20-33.tar.gz  flexmix_2.3-13.tar.gz; \
      wget http://cran.rstudio.com/src/contrib/Archive/Matrix/Matrix_1.2-6.tar.gz; \
      R CMD INSTALL Matrix_1.2-6.tar.gz; \
      R -e 'install.packages(c("MatrixModels", "SparseM", "quantreg"))'; \
