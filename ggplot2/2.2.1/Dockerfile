@@ -36,6 +36,16 @@ RUN echo "deb http://cran.r-project.org/bin/linux/ubuntu trusty/" > /etc/apt/sou
           r-doc-html=3.3.1-1trusty0 \
           r-recommended=3.3.1-1trusty0 \
           r-cran-xml=3.98-1.1-1 \
-          r-cran-rcurl=1.95-4.1-1; \
+          r-cran-rcurl=1.95-4.1-1 \
+          wget; \
+     wget http://cran.r-project.org/src/contrib/Archive/MASS/MASS_7.3-45.tar.gz \
+     http://cran.r-project.org/src/contrib/Archive/Rcpp/Rcpp_0.12.10.tar.gz; \
+     R CMD INSTALL Rcpp_0.12.10.tar.gz MASS_7.3-45.tar.gz; \
+     R -e "install.packages(c('lazyeval', 'rlang','digest', 'gtable', 'plyr', 'reshape2'), repos='http://cran.r-project.org' )"; \
+     wget http://cran.r-project.org/src/contrib/Archive/tibble/tibble_1.3.0.tar.gz; \
+     R CMD INSTALL tibble_1.3.0.tar.gz; \
+     R -e "install.packages(c('RColorBrewer', 'dichromat', 'munsell', 'labeling', 'scales'), repos='http://cran.r-project.org')"; \
      R -e " install.packages('ggplot2', repos='http://cran.r-project.org')"; \
+     rm *.tar.gz; \
+     apt-get remove --purge --yes wget; \
      apt-get clean;
