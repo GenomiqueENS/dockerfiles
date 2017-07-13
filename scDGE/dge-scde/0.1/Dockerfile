@@ -1,6 +1,6 @@
 ##############################################
-#      Dockerfile to build dge-scde 	   #
-#             container images	   	   #
+#      Dockerfile to build dge-scde 	     #
+#             container images	   	     #
 #            Based on scde 2.0.1             #
 ##############################################
 # Set the base image to scran
@@ -10,7 +10,7 @@ FROM genomicpariscentre/scde:2.0.1
 MAINTAINER Geoffray Brelurut <brelurut@biologie.ens.fr>
 
 # Install required programs then clean up
-mkdir /scripts;\
+RUN mkdir /scripts;\
 cd /scripts;\
 apt-get install --yes wget;\
 wget https://raw.githubusercontent.com/GBrelurut/Single_cell_development/master/R/scdeErrors.R;\
