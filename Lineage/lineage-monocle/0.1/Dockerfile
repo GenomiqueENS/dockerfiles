@@ -1,7 +1,7 @@
 ####################################################
 #      Dockerfile to build lineage-monocle 	   #
-#	  lineage-Monocle  container images	   	   #
-#              Based on monocle 2.2.0               #
+#	         container images	   	   #
+#              Based on monocle 2.2.0              #
 ####################################################
 # Set the base image to scran
 FROM genomicpariscentre/monocle:2.2.0
@@ -10,7 +10,7 @@ FROM genomicpariscentre/monocle:2.2.0
 MAINTAINER Geoffray Brelurut <brelurut@biologie.ens.fr>
 
 # Install required programs then clean up
-mkdir /scripts;\
+RUN mkdir /scripts;\
 cd /scripts;\
 apt-get install --yes wget;\
 wget https://raw.githubusercontent.com/GBrelurut/Single_cell_development/master/R/monocle.R;\
