@@ -53,9 +53,10 @@ RUN echo "deb http://cran.r-project.org/bin/linux/ubuntu trusty/" > /etc/apt/sou
     wget http://cran.rstudio.com/src/contrib/Archive/lattice/lattice_0.20-33.tar.gz \
          http://cran.rstudio.com/src/contrib/Archive/Matrix/Matrix_1.2-6.tar.gz \
          http://cran.rstudio.com/src/contrib/Archive/irlba/irlba_2.1.2.tar.gz \
-         http://cran.r-project.org/src/contrib/Archive/igraph/igraph_1.0.1.tar.gz; \
-    R CMD INSTALL lattice_0.20-33.tar.gz Matrix_1.2-6.tar.gz irlba_2.1.2.tar.gz igraph_1.0.1.tar.gz; \
-    R -e "install.packages(c('fastICA', 'VGAM'), repos='http://cran.r-project.org' )"; \
+         http://cran.r-project.org/src/contrib/Archive/igraph/igraph_1.0.1.tar.gz \
+          http://cran.rstudio.com/src/contrib/Archive/VGAM/VGAM_1.0-3.tar.gz; \
+    R CMD INSTALL lattice_0.20-33.tar.gz Matrix_1.2-6.tar.gz irlba_2.1.2.tar.gz igraph_1.0.1.tar.gz VGAM_1.0-3.tar.gz; \
+    R -e "install.packages(c('fastICA'), repos='http://cran.r-project.org' )"; \
     wget http://cran.rstudio.com/src/contrib/Archive/RcppEigen/RcppEigen_0.3.2.9.1.tar.gz \
          http://cran.rstudio.com/src/contrib/Archive/BH/BH_1.60.0-2.tar.gz \
          http://cran.rstudio.com/src/contrib/Archive/DDRTree/DDRTree_0.1.4.tar.gz; \
