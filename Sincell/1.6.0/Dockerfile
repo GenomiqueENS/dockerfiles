@@ -46,7 +46,7 @@ RUN echo "deb http://cran.r-project.org/bin/linux/ubuntu trusty/" > /etc/apt/sou
      R -e 'install.packages(c("entropy", "iterators", "Rtsne", "fastICA"))'; \
      wget http://cran.r-project.org/src/contrib/Archive/codetools/codetools_0.2-14.tar.gz; \
      R CMD INSTALL codetools_0.2-14.tar.gz; \
-     wget http://cran.rstudio.com/src/contrib/colorspace/colorspace_1.2-6.tar.gz; \
+     wget http://cran.rstudio.com/src/contrib/Archive/colorspace/colorspace_1.2-6.tar.gz; \
      R CMD INSTALL colorspace_1.2-6.tar.gz; \
      R -e 'install.packages(c("RColorBrewer", "foreach", "ggplot2", "magrittr", "digest", "registry", "stringi", "stringr", "xtable", "pkgmaker", "gridBase", "rngtools", "doParallel", "NMF"))'; \
      wget  http://cran.rstudio.com/src/contrib/Archive/lattice/lattice_0.20-33.tar.gz \
@@ -57,13 +57,13 @@ RUN echo "deb http://cran.r-project.org/bin/linux/ubuntu trusty/" > /etc/apt/sou
      R CMD INSTALL TSP_1.1-4.tar.gz; \
      wget http://cran.rstudio.com/src/contrib/Archive/spam/spam_1.3-0.tar.gz \
           http://cran.rstudio.com/src/contrib/Archive/maps/maps_3.1.1.tar.gz \
-          http://cran.rstudio.com/src/contrib/Archive/fields/fields_8.4-1.tar.gz; \
-     R CMD INSTALL spam_1.3-0.tar.gz maps_3.1.1.tar.gz fields_8.4-1.tar.gz; \
-     R -e 'install.packages("igraph")'; \
+          http://cran.rstudio.com/src/contrib/Archive/fields/fields_8.4-1.tar.gz \
+          http://cran.r-project.org/src/contrib/Archive/igraph/igraph_1.0.1.tar.gz; \
+     R CMD INSTALL spam_1.3-0.tar.gz maps_3.1.1.tar.gz fields_8.4-1.tar.gz igraph_1.0.1.tar.gz; \
      wget http://bioconductor.org/packages/3.4/bioc/src/contrib/sincell_1.6.0.tar.gz; \
      R CMD INSTALL sincell_1.6.0.tar.gz; \
      rm *.tar.gz; \
-     apt-get remover --purge --yes wget; \
+     apt-get remove --purge --yes wget; \
      apt-get clean; 
      
      
