@@ -19,6 +19,7 @@ RUN echo "deb http://cran.r-project.org/bin/linux/ubuntu trusty/" > /etc/apt/sou
      r-recommended=3.4.1-1trusty0 \
      r-base-html=3.4.1-1trusty0 \
      r-cran-boot=1.3-17-1trusty0 \
+     r-cran-matrix=1.2-10-1trusty0 \
      r-cran-mgcv=1.8-13-1trusty0 \
      r-cran-xml=3.98-1.1-1 \
      r-cran-rcurl=1.95-4.1-1 \
@@ -89,15 +90,6 @@ RUN echo "deb http://cran.r-project.org/bin/linux/ubuntu trusty/" > /etc/apt/sou
      R CMD INSTALL nlme_3.1-128.tar.gz RcppEigen_0.3.2.0.2.tar.gz coda_0.18-1.tar.gz; \
      R -e "install.packages(c('minqa','nloptr', 'lme4', 'abind', 'arm'))"; \
      R -e "install.packages(c('blockmodeling', 'praise', 'magrittr', 'gtools'))"; \
-     wget http://cran.rstudio.com/src/contrib/Archive/digest/digest_0.6.11.tar.gz \
-          http://cran.rstudio.com/src/contrib/Archive/crayon/crayon_1.3.1.tar.gz \
-          http://cran.rstudio.com/src/contrib/Archive/R6/R6_2.1.2.tar.gz \
-          http://cran.rstudio.com/src/contrib/Archive/gdata/gdata_2.17.0.tar.gz; \
-     R CMD INSTALL digest_0.6.11.tar.gz crayon_1.3.1.tar.gz R6_2.1.2.tar.gz gdata_2.17.0.tar.gz; \
-     R -e "install.packages(c('testthat', 'caTools', 'KernSmooth', 'gplots'))"; \
-     wget http://www.bioconductor.org/packages/3.4/bioc/src/contrib/EBSeq_1.14.0.tar.gz \
-          http://www.bioconductor.org/packages/release/bioc/src/contrib/scDD_1.0.0.tar.gz; \
-     R CMD INSTALL EBSeq_1.14.0.tar.gz  R -e "install.packages(c('blockmodeling', 'praise', 'magrittr', 'gtools'))";\
      wget http://cran.rstudio.com/src/contrib/Archive/digest/digest_0.6.11.tar.gz \
           http://cran.rstudio.com/src/contrib/Archive/crayon/crayon_1.3.1.tar.gz \
           http://cran.rstudio.com/src/contrib/Archive/R6/R6_2.1.2.tar.gz \
