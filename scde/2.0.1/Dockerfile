@@ -48,8 +48,8 @@ RUN echo "deb http://cran.r-project.org/bin/linux/ubuntu trusty/" > /etc/apt/sou
      R CMD INSTALL nloptr_1.0.4.tar.gz; \
      R CMD INSTALL Rcpp_0.12.10.tar.gz RcppArmadillo_0.7.200.2.0.tar.gz MASS_7.3-45.tar.gz; \
      wget http://cran.r-project.org/src/contrib/Archive/lambda.r/lambda.r_1.1.9.tar.gz \
-          http://cran.r-project.org//src/contrib/futile.options_1.0.0.tar.gz  \
-          http://cran.r-project.org//src/contrib/futile.logger_1.4.3.tar.gz; \
+          http://cran.r-project.org/src/contrib/futile.options_1.0.0.tar.gz \
+          http://cran.r-project.org/src/contrib/futile.logger_1.4.3.tar.gz; \
      if [ ! -f futile.options_1.0.0.tar.gz ]; \
      then wget http://cran.r-project.org//src/contrib/Archive/futile.options/futile.options_1.0.0.tar.gz; \
      fi; \
@@ -93,7 +93,7 @@ RUN echo "deb http://cran.r-project.org/bin/linux/ubuntu trusty/" > /etc/apt/sou
      R CMD INSTALL modeltools_0.2-21.tar.gz; \
      wget http://cran.r-project.org/src/contrib/Archive/snow/snow_0.4-1.tar.gz \
           http://www.bioconductor.org/packages/3.3/bioc/src/contrib/BiocParallel_1.6.6.tar.gz; \
-     R CMD INSTALL snow_0.4-1.tar.gz  BiocParallel_1.6.6.tar.gz;\
+     R CMD INSTALL snow_0.4-1.tar.gz  BiocParallel_1.6.6.tar.gz; \
      wget http://www.bioconductor.org/packages/3.3/bioc/src/contrib/BiocGenerics_0.18.0.tar.gz \
           http://www.bioconductor.org/packages/3.3/bioc/src/contrib/Biobase_2.32.0.tar.gz \
           http://bioconductor.riken.jp/packages/3.3/bioc/src/contrib/pcaMethods_1.64.0.tar.gz; \
