@@ -1,6 +1,6 @@
 ####################################################
 # Dockerfile to build Scran 1.0.4 container images #
-#     Based on Ubuntu 14.04                        #
+#     Based on ggplot 2.2.1                        #
 ####################################################
 # Set the base image to Ubuntu
 FROM genomicpariscentre/ggplot2:2.2.1
@@ -25,7 +25,7 @@ RUN apt-get install --yes wget; \
      R CMD INSTALL plogr_0.1-1.tar.gz; \
      wget http://cran.r-project.org//src/contrib/glue_1.1.1.tar.gz; \
      if [ ! -f  glue_1.1.1.tar.gz ]; \
-     then wget https://cran.r-project.org/src/contrib/Archive/magrittr/glue_1.1.1.tar.gz; \
+     then wget https://cran.r-project.org/src/contrib/Archive/glue/glue_1.1.1.tar.gz; \
      fi; \
      R CMD INSTALL glue_1.1.1.tar.gz; \
      wget http://cran.r-project.org/src/contrib/Archive/BH/BH_1.60.0-1.tar.gz \
@@ -73,11 +73,11 @@ RUN apt-get install --yes wget; \
           https://cran.r-project.org/src/contrib/Archive/viridis/viridis_0.3.4.tar.gz; \
      R CMD INSTALL viridisLite_0.1.3.tar.gz gridExtra_2.2.1.tar.gz viridis_0.3.4.tar.gz; \
      wget http://cran.r-project.org/src/contrib/Archive/snow/snow_0.4-1.tar.gz \
-     http://www.bioconductor.org/packages/3.3/bioc/src/contrib/BiocParallel_1.6.6.tar.gz;\
+          http://www.bioconductor.org/packages/3.3/bioc/src/contrib/BiocParallel_1.6.6.tar.gz;\
      R CMD INSTALL snow_0.4-1.tar.gz BiocParallel_1.6.6.tar.gz;\
      wget http://www.bioconductor.org/packages/3.3/bioc/src/contrib/BiocGenerics_0.18.0.tar.gz \
-     http://www.bioconductor.org/packages/3.3/bioc/src/contrib/Biobase_2.32.0.tar.gz \
-     http://cran.r-project.org/src/contrib/Archive/matrixStats/matrixStats_0.50.2.tar.gz; \
+          http://www.bioconductor.org/packages/3.3/bioc/src/contrib/Biobase_2.32.0.tar.gz \
+          http://cran.r-project.org/src/contrib/Archive/matrixStats/matrixStats_0.50.2.tar.gz; \
      R CMD INSTALL matrixStats_0.50.2.tar.gz BiocGenerics_0.18.0.tar.gz Biobase_2.32.0.tar.gz;\
      wget http://www.bioconductor.org/packages/3.3/bioc/src/contrib/limma_3.28.21.tar.gz; \
      R CMD INSTALL limma_3.28.21.tar.gz; \
@@ -88,20 +88,20 @@ RUN apt-get install --yes wget; \
      wget http://www.bioconductor.org/packages/3.3/bioc/src/contrib/tximport_1.0.3.tar.gz; \
      R CMD INSTALL tximport_1.0.3.tar.gz; \
      wget http://www.bioconductor.org/packages/3.3/bioc/src/contrib/biomaRt_2.28.0.tar.gz \
-     http://www.bioconductor.org/packages/3.3/bioc/src/contrib/AnnotationDbi_1.34.4.tar.gz \
-     http://www.bioconductor.org/packages/3.3/bioc/src/contrib/IRanges_2.6.1.tar.gz \
-     http://www.bioconductor.org/packages/3.3/bioc/src/contrib/S4Vectors_0.10.3.tar.gz \
-     http://cran.r-project.org/src/contrib/Archive/RSQLite/RSQLite_1.0.0.tar.gz \
-     http://cran.r-project.org/src/contrib/Archive/DBI/DBI_0.4-1.tar.gz; \
+          http://www.bioconductor.org/packages/3.3/bioc/src/contrib/AnnotationDbi_1.34.4.tar.gz \
+          http://www.bioconductor.org/packages/3.3/bioc/src/contrib/IRanges_2.6.1.tar.gz \
+          http://www.bioconductor.org/packages/3.3/bioc/src/contrib/S4Vectors_0.10.3.tar.gz \
+          http://cran.r-project.org/src/contrib/Archive/RSQLite/RSQLite_1.0.0.tar.gz \
+          http://cran.r-project.org/src/contrib/Archive/DBI/DBI_0.4-1.tar.gz; \
      R CMD INSTALL DBI_0.4-1.tar.gz RSQLite_1.0.0.tar.gz S4Vectors_0.10.3.tar.gz IRanges_2.6.1.tar.gz AnnotationDbi_1.34.4.tar.gz biomaRt_2.28.0.tar.gz;  \
      wget http://cran.r-project.org/src/contrib/Archive/data.table/data.table_1.9.6.tar.gz \
-     http://cran.r-project.org/src/contrib/Archive/chron/chron_2.3-47.tar.gz ; \
+          http://cran.r-project.org/src/contrib/Archive/chron/chron_2.3-47.tar.gz ; \
      R CMD INSTALL chron_2.3-47.tar.gz data.table_1.9.6.tar.gz; \
      wget http://www.bioconductor.org/packages/3.3/bioc/src/contrib/rhdf5_2.16.0.tar.gz \
-     http://www.bioconductor.org/packages/3.3/bioc/src/contrib/zlibbioc_1.18.0.tar.gz; \
+          http://www.bioconductor.org/packages/3.3/bioc/src/contrib/zlibbioc_1.18.0.tar.gz; \
      R CMD INSTALL zlibbioc_1.18.0.tar.gz rhdf5_2.16.0.tar.gz; \
      wget http://www.bioconductor.org/packages/3.3/bioc/src/contrib/scater_1.0.4.tar.gz \
-     http://www.bioconductor.org/packages/3.3/bioc/src/contrib/scran_1.0.4.tar.gz; \
+          http://www.bioconductor.org/packages/3.3/bioc/src/contrib/scran_1.0.4.tar.gz; \
      R CMD INSTALL scater_1.0.4.tar.gz scran_1.0.4.tar.gz; \
      rm *.tar.gz; \
      apt-get remove --purge --yes wget; \
