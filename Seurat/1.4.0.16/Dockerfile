@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install --yes \
        libssl-dev \
        libcurl4-openssl-dev \
        libxml2-dev \
+       openjdk-7-jre \
        wget; \
     wget http://cran.r-project.org/src/contrib/Archive/openssl/openssl_0.9.4.tar.gz \
          http://cran.r-project.org/src/contrib/Archive/curl/curl_1.1.tar.gz \
