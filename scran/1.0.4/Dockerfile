@@ -101,9 +101,8 @@ RUN apt-get install --yes wget; \
           http://www.bioconductor.org/packages/3.3/bioc/src/contrib/AnnotationDbi_1.34.4.tar.gz \
           http://www.bioconductor.org/packages/3.3/bioc/src/contrib/IRanges_2.6.1.tar.gz \
           http://www.bioconductor.org/packages/3.3/bioc/src/contrib/S4Vectors_0.10.3.tar.gz \
-          http://cran.r-project.org/src/contrib/Archive/RSQLite/RSQLite_1.0.0.tar.gz \
-          http://cran.r-project.org/src/contrib/Archive/DBI/DBI_0.4-1.tar.gz; \
-     R CMD INSTALL DBI_0.4-1.tar.gz RSQLite_1.0.0.tar.gz S4Vectors_0.10.3.tar.gz IRanges_2.6.1.tar.gz AnnotationDbi_1.34.4.tar.gz biomaRt_2.28.0.tar.gz;  \
+          http://cran.r-project.org/src/contrib/Archive/RSQLite/RSQLite_1.0.0.tar.gz; \
+     R CMD INSTALL RSQLite_1.0.0.tar.gz S4Vectors_0.10.3.tar.gz IRanges_2.6.1.tar.gz AnnotationDbi_1.34.4.tar.gz biomaRt_2.28.0.tar.gz;  \
      wget http://cran.r-project.org/src/contrib/Archive/data.table/data.table_1.9.6.tar.gz \
           http://cran.r-project.org/src/contrib/Archive/chron/chron_2.3-47.tar.gz ; \
      R CMD INSTALL chron_2.3-47.tar.gz data.table_1.9.6.tar.gz; \
