@@ -17,8 +17,8 @@ wget https://raw.githubusercontent.com/GBrelurut/Single_cell_development/master/
      https://raw.githubusercontent.com/GBrelurut/Single_cell_development/master/R/qualityCheckingSaturation.R \
      https://raw.githubusercontent.com/GBrelurut/Single_cell_development/master/R/qualityCheckingThresholds.R; \
 apt-get clean;\
-apt-get remove --purge --yes wget;\
-cd /;
+apt-get remove --purge --yes wget;
+
 
 
 
