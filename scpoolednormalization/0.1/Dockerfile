@@ -10,7 +10,7 @@ FROM genomicpariscentre/scran:1.0.4
 MAINTAINER Geoffray Brelurut <brelurut@biologie.ens.fr>
 
 # Install required programs then clean up
-RUN apt-get install --yes wget libnlopt-dev pkg-config;\
+RUN apt-get update && apt-get install --yes wget libnlopt-dev pkg-config;\
     wget http://cran.r-project.org/src/contrib/Archive/Rcpp/Rcpp_0.12.11.tar.gz \
          http://cran.r-project.org/src/contrib/Archive/Rtsne/Rtsne_0.11.tar.gz; \
     R CMD INSTALL Rcpp_0.12.11.tar.gz Rtsne_0.11.tar.gz; \
