@@ -1,10 +1,10 @@
 ####################################################
-#    Dockerfile to build SC Spikeless Pooled	   #
-#	  Normalization  container images	   	   #
-#              Based on scran 1.0.4                #
+#    Dockerfile to build Sum Normalization	   #
+#	    		container images	  		   #
+#              Based on ggplot2 2.2.1              #
 ####################################################
 # Set the base image to scran
-FROM genomicpariscentre/scran:1.0.4
+FROM genomicpariscentre/ggplot2:2.2.1
 
 # File Author
 MAINTAINER Geoffray Brelurut <brelurut@biologie.ens.fr>
@@ -95,6 +95,6 @@ RUN apt-get update && apt-get install --yes wget libnlopt-dev pkg-config;\
     rm *.tar.gz; \
     mkdir /scripts; \
     cd /scripts; \
-    wget https://raw.githubusercontent.com/GBrelurut/Single_cell_development/master/R/SCSpikelessPooledNormalization.R; \
+    wget https://raw.githubusercontent.com/GBrelurut/Single_cell_development/master/R/sumNormalization.R; \
     apt-get clean; \
     apt-get remove --purge --yes wget;

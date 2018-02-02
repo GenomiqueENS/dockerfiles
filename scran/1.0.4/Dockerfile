@@ -72,6 +72,16 @@ RUN apt-get install --yes wget; \
           http://cran.r-project.org/src/contrib/Archive/gridExtra/gridExtra_2.2.1.tar.gz \
           https://cran.r-project.org/src/contrib/Archive/viridis/viridis_0.3.4.tar.gz; \
      R CMD INSTALL viridisLite_0.1.3.tar.gz gridExtra_2.2.1.tar.gz viridis_0.3.4.tar.gz; \
+     wget http://cran.r-project.org/src/contrib/quadprog_1.5-5.tar.gz \
+          http://cran.r-project.org/src/contrib/lpSolve_5.6.13.tar.gz \
+          http://cran.r-project.org/src/contrib/Archive/limSolve/limSolve_1.5.5.2.tar.gz; \
+     if [ ! -f lpSolve_5.6.13.tar.gz ]; \
+     then wget http://cran.r-project.org/src/contrib/Archive/lpSolve/lpSolve_5.6.13.tar.gz; \
+     fi; \
+     if [ ! -f quadprog_1.5-5.tar.gz ]; \
+     then wget http://cran.r-project.org/src/contrib/Archive/quadprog/quadprog_1.5-5.tar.gz; \
+     fi; \
+     R CMD INSTALL lpSolve_5.6.13.tar.gz quadprog_1.5-5.tar.gz limSolve_1.5.5.2.tar.gz;\
      wget http://cran.r-project.org/src/contrib/Archive/snow/snow_0.4-1.tar.gz \
           http://www.bioconductor.org/packages/3.3/bioc/src/contrib/BiocParallel_1.6.6.tar.gz;\
      R CMD INSTALL snow_0.4-1.tar.gz BiocParallel_1.6.6.tar.gz;\
@@ -91,9 +101,8 @@ RUN apt-get install --yes wget; \
           http://www.bioconductor.org/packages/3.3/bioc/src/contrib/AnnotationDbi_1.34.4.tar.gz \
           http://www.bioconductor.org/packages/3.3/bioc/src/contrib/IRanges_2.6.1.tar.gz \
           http://www.bioconductor.org/packages/3.3/bioc/src/contrib/S4Vectors_0.10.3.tar.gz \
-          http://cran.r-project.org/src/contrib/Archive/RSQLite/RSQLite_1.0.0.tar.gz \
-          http://cran.r-project.org/src/contrib/Archive/DBI/DBI_0.4-1.tar.gz; \
-     R CMD INSTALL DBI_0.4-1.tar.gz RSQLite_1.0.0.tar.gz S4Vectors_0.10.3.tar.gz IRanges_2.6.1.tar.gz AnnotationDbi_1.34.4.tar.gz biomaRt_2.28.0.tar.gz;  \
+          http://cran.r-project.org/src/contrib/Archive/RSQLite/RSQLite_1.0.0.tar.gz; \
+     R CMD INSTALL RSQLite_1.0.0.tar.gz S4Vectors_0.10.3.tar.gz IRanges_2.6.1.tar.gz AnnotationDbi_1.34.4.tar.gz biomaRt_2.28.0.tar.gz;  \
      wget http://cran.r-project.org/src/contrib/Archive/data.table/data.table_1.9.6.tar.gz \
           http://cran.r-project.org/src/contrib/Archive/chron/chron_2.3-47.tar.gz ; \
      R CMD INSTALL chron_2.3-47.tar.gz data.table_1.9.6.tar.gz; \
