@@ -1,6 +1,6 @@
 ####################################################
 #    Dockerfile to build Sum Normalization	   #
-#	    		container images	  		   #
+#	  	container images 		   #
 #              Based on ggplot2 2.2.1              #
 ####################################################
 # Set the base image to scran
