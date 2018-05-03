@@ -1,6 +1,6 @@
 ######################################################
 # Dockerfile to build Monocle 2.2.0 container images #
-#               Based on Ubuntu                      #
+#               Based on Ubuntu 14.04                #
 ######################################################
 
 # Set the base image to Ubuntu
@@ -180,21 +180,18 @@ RUN echo "deb http://cran.r-project.org/bin/linux/ubuntu trusty/" > /etc/apt/sou
      wget http://cran.rstudio.com/src/contrib/Archive/matrixStats/matrixStats_0.50.2.tar.gz \
           http://cran.r-project.org/src/contrib/Archive/slam/slam_0.1-37.tar.gz; \
      R CMD INSTALL matrixStats_0.50.2.tar.gz slam_0.1-37.tar.gz; \
-     wget http://cran.r-project.org//src/contrib/bindr_0.1.tar.gz; \
+     wget http://cran.r-project.org/src/contrib/bindr_0.1.tar.gz; \
      if [ ! -f ./bindr_0.1.tar.gz ]; \
-     then wget http://cran.r-project.org//src/contrib/bindr/bindr_0.1.tar.gz; \
+     then wget http://cran.r-project.org/src/contrib/Archive/bindr/bindr_0.1.tar.gz; \
      fi; \
-     R CMD INSTALL bindr_0.1.tar.gz; \
      wget http://cran.r-project.org//src/contrib/plogr_0.1-1.tar.gz; \
      if [ ! -f ./plogr_0.1-1.tar.gz ]; \
-     then wget http://cran.r-project.org//src/contrib/plogr/plogr_0.1-1.tar.gz; \
+     then wget http://cran.r-project.org/src/contrib/Archive/plogr/plogr_0.1-1.tar.gz; \
      fi; \
-     R CMD INSTALL plogr_0.1-1.tar.gz; \
-     wget http://cran.r-project.org//src/contrib/glue_1.1.1.tar.gz; \
+     wget http://cran.r-project.org/src/contrib/glue_1.1.1.tar.gz; \
      if [ ! -f  glue_1.1.1.tar.gz ]; \
      then wget https://cran.r-project.org/src/contrib/Archive/glue/glue_1.1.1.tar.gz; \
      fi; \
-     R CMD INSTALL glue_1.1.1.tar.gz; \
      wget http://cran.rstudio.com/src/contrib/qlcMatrix_0.9.5.tar.gz; \
      if [ ! -f qlcMatrix_0.9.5.tar.gz ]; \
      then wget http://cran.rstudio.com/src/contrib/Archive/qlcMatrix/qlcMatrix_0.9.5.tar.gz; \
