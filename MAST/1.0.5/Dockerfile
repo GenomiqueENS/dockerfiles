@@ -1,6 +1,6 @@
 ####################################################
 # Dockerfile to build MAST 1.0.5 container images  #
-#         Based on Ubuntu 14.04                    #
+#            Based on Ubuntu 14.04                 #
 ####################################################
 # Set the base image to Ubuntu
 FROM ubuntu:14.04
