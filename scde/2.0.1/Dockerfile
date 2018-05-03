@@ -1,6 +1,6 @@
 ###################################################
 # Dockerfile to build scde 2.0.1 container images #
-#             Based on Ubuntu  14.04              #
+#             Based on Ubuntu 14.04               #
 ###################################################
 
 # Set the base image to Ubuntu
