@@ -1,6 +1,6 @@
 ####################################################
 # Dockerfile to build Scran 1.0.4 container images #
-#     Based on ggplot 2.2.1                        #
+#             Based on ggplot 2.2.1                #
 ####################################################
 # Set the base image to Ubuntu
 FROM genomicpariscentre/ggplot2:2.2.1
@@ -13,17 +13,17 @@ RUN apt-get install --yes wget; \
      echo 'local({r <- getOption("repos"); r["CRAN"] <- "http://cran.r-project.org"; options(repos=r)})' > ~/.Rprofile; \
      wget http://cran.r-project.org/src/contrib/Archive/htmltools/htmltools_0.3.5.tar.gz; \
      R CMD INSTALL htmltools_0.3.5.tar.gz; \
-     wget http://cran.r-project.org//src/contrib/bindr_0.1.tar.gz; \
+     wget http://cran.r-project.org/src/contrib/bindr_0.1.tar.gz; \
      if [ ! -f ./bindr_0.1.tar.gz ]; \
-     then wget http://cran.r-project.org//src/contrib/bindr/bindr_0.1.tar.gz; \
+     then wget http://cran.r-project.org/src/contrib/Archive/bindr/bindr_0.1.tar.gz; \
      fi; \
      R CMD INSTALL bindr_0.1.tar.gz; \
-     wget http://cran.r-project.org//src/contrib/plogr_0.1-1.tar.gz; \
+     wget http://cran.r-project.org/src/contrib/plogr_0.1-1.tar.gz; \
      if [ ! -f ./plogr_0.1-1.tar.gz ]; \
-     then wget http://cran.r-project.org//src/contrib/plogr/plogr_0.1-1.tar.gz; \
+     then wget http://cran.r-project.org/src/contrib/Archive/plogr/plogr_0.1-1.tar.gz; \
      fi; \
      R CMD INSTALL plogr_0.1-1.tar.gz; \
-     wget http://cran.r-project.org//src/contrib/glue_1.1.1.tar.gz; \
+     wget http://cran.r-project.org/src/contrib/glue_1.1.1.tar.gz; \
      if [ ! -f  glue_1.1.1.tar.gz ]; \
      then wget https://cran.r-project.org/src/contrib/Archive/glue/glue_1.1.1.tar.gz; \
      fi; \
@@ -56,9 +56,9 @@ RUN apt-get install --yes wget; \
      then wget http://cran.r-project.org/src/contrib/Archive/rjson/rjson_0.2.15.tar.gz ; \
      fi; \
      R CMD INSTALL rjson_0.2.15.tar.gz ; \
-     wget http://cran.r-project.org//src/contrib/httpuv_1.3.5.tar.gz; \
+     wget http://cran.r-project.org/src/contrib/httpuv_1.3.5.tar.gz; \
      if [ ! -f httpuv_1.3.5.tar.gz ]; \
-     then wget http://cran.r-project.org//src/contrib/Archive/futile.logger/httpuv_1.3.5.tar.gz; \
+     then wget http://cran.r-project.org/src/contrib/Archive/httpuv/httpuv_1.3.5.tar.gz; \
      fi; \
      R CMD INSTALL httpuv_1.3.5.tar.gz; \
      wget http://cran.r-project.org/src/contrib/Archive/mime/mime_0.3.tar.gz \
