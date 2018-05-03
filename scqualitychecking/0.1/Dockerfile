@@ -1,6 +1,6 @@
 ####################################################
 #    Dockerfile to build SC Quality Checking	   #
-#	  		container images	   		   #
+#	         container images	   	   #
 #              Based on ggplot2 2.2.1              #
 ####################################################
 # Set the base image to ggplot2
