@@ -1,6 +1,6 @@
 ####################################################
 #    Dockerfile to build SC Spikeless Pooled	   #
-#	  Normalization  container images	   	   #
+#	  Normalization  container images   	   #
 #              Based on scran 1.0.4                #
 ####################################################
 # Set the base image to scran
