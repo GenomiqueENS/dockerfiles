@@ -1,7 +1,7 @@
 ####################################################
 #    Dockerfile to build SC Clustering	   	   #
-#	  		container images	   		   #
-#              Based on seurat 1.4.0.16            #
+#  		container images   		   #
+#            Based on seurat 1.4.0.16              #
 ####################################################
 # Set the base image to seurat 1.4.0.16
 FROM genomicpariscentre/seurat:1.4.0.16
