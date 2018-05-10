@@ -3,7 +3,7 @@
 #             container images	   	     #
 #            Based on scde 2.0.1             #
 ##############################################
-# Set the base image to scran
+# Set the base image to scde 
 FROM genomicpariscentre/scde:2.0.1
 
 # File Author
