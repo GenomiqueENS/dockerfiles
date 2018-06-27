@@ -47,7 +47,7 @@ RUN make
 
 RUN ln -s /usr/local/bedtools2/bin/* /usr/local/bin/
 
-#Download hg19, mm9 and mm10 blacklists
+#Download hg38, hg19, mm9 and mm10 blacklists
 RUN apt-get install wget
 WORKDIR /
 RUN mkdir blacklist_files
@@ -55,6 +55,7 @@ WORKDIR /blacklist_files
 RUN wget https://raw.githubusercontent.com/ComputationalSystemsBiology/EoulsanDockerFiles/master/BlacklistRemove/Blacklist_files/hg19blacklist.bed
 RUN wget https://raw.githubusercontent.com/ComputationalSystemsBiology/EoulsanDockerFiles/master/BlacklistRemove/Blacklist_files/mm10blacklist.bed
 RUN wget https://raw.githubusercontent.com/ComputationalSystemsBiology/EoulsanDockerFiles/master/BlacklistRemove/Blacklist_files/mm9blacklist.bed
+RUN wget https://raw.githubusercontent.com/ComputationalSystemsBiology/EoulsanDockerFiles/master/BlacklistRemove/Blacklist_files/hg38blacklist.bed
 
 # Cleanup
 RUN apt-get clean
