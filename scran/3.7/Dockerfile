@@ -9,5 +9,5 @@ FROM genomicpariscentre/singlecellexperiment:3.7
 MAINTAINER Geoffray Brelurut <brelurut@biologie.ens.fr>
 
 # Install required programs then clean up
-RUN R -e "install.packages('scran')";
+RUN R -e "biocLite('scran'); install.packages('limSolve')";
  
