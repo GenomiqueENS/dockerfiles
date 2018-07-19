@@ -3,7 +3,7 @@
 #	         container images	   	   #
 #              Based on monocle 2.2.0              #
 ####################################################
-# Set the base image to scran
+# Set the base image to monocle
 FROM genomicpariscentre/monocle:2.2.0
 
 # File Author
