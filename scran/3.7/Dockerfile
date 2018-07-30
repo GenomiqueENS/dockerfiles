@@ -3,7 +3,7 @@
 #                 Based on SCE 3.7                 #
 ####################################################
 # Set the base image to Ubuntu
-FROM genomicpariscentre/singlecellexperiment:3.7
+FROM genomicpariscentre/ggplot2:3.0.0
 
 # File Author
 MAINTAINER Geoffray Brelurut <brelurut@biologie.ens.fr>
