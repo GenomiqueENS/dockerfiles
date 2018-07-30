@@ -12,5 +12,5 @@ MAINTAINER Geoffray Brelurut <brelurut@biologie.ens.fr>
 # Install required programs then clean up
 RUN mkdir /scripts; \
     cd /scripts; \
-    wget https://raw.githubusercontent.com/GBrelurut/Single_cell_development/master/R/µSCEsumNormalization.R; \
+    wget https://raw.githubusercontent.com/GBrelurut/Single_cell_development/master/R/SCEsumNormalization.R; \
     apt-get clean;
