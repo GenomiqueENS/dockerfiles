@@ -16,8 +16,7 @@ apt-get install --yes wget;\
 wget https://raw.githubusercontent.com/GBrelurut/Single_cell_development/master/R/SCEqualityCheckingMAD.R \
      https://raw.githubusercontent.com/GBrelurut/Single_cell_development/master/R/SCEqualityCheckingSaturation.R \
      https://raw.githubusercontent.com/GBrelurut/Single_cell_development/master/R/SCEqualityCheckingThresholds.R; \
-apt-get clean;\
-apt-get remove --purge --yes wget;
+apt-get clean;
 
 
 
