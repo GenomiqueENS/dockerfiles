@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install \
        libssl-dev \
        libcurl4-openssl-dev \
        libxml2-dev \
+       libpng-dev \
        openjdk-7-jre; \
     R -e "install.packages('Seurat')"; \
     apt-get clean;
