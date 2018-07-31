@@ -9,12 +9,11 @@ FROM genomicpariscentre/scran:1.8.2
 MAINTAINER Geoffray Brelurut <brelurut@biologie.ens.fr>
 
 # Install required programs then clean up
-RUN apt-get update && apt-get install \
+RUN apt-get update && apt-get install --yes\
        r-base-dev \
        libssl-dev \
        libcurl4-openssl-dev \
        libxml2-dev \
-       libpng-dev \
-       openjdk-7-jre; \
+       libpng-dev; \
     R -e "install.packages('Seurat')"; \
     apt-get clean;
