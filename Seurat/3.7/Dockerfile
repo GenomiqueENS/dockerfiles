@@ -15,5 +15,5 @@ RUN apt-get update && apt-get install --yes\
        libcurl4-openssl-dev \
        libxml2-dev \
        libpng-dev; \
-    R -e "install.packages('Seurat')"; \
+    R -e "install.packages(c('class', 'Seurat'))"; \
     apt-get clean;
