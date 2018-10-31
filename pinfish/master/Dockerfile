@@ -29,6 +29,6 @@ RUN export GOROOT=/usr/local/go && \
     cd /tmp/pinfish/cluster_gff &&\
     go build -ldflags "-X main.Version=0.1.0 -X main.Build=`git rev-parse HEAD`" -o /cluster_gff && \
     cd /tmp/pinfish/polish_clusters &&\
-    go build -ldflags "-X main.Version=0.1.0 -X main.Build=`git rev-parse HEAD`" -o collapse_partials && \
+    go build -ldflags "-X main.Version=0.1.0 -X main.Build=`git rev-parse HEAD`" -o collapse_partials
 
 
