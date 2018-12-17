@@ -18,6 +18,9 @@ RUN apt-get install -y build-essential \
  wget \
  bzip2 \
  ca-certificates \
+ samtools \
+ libbam-dev \
+ libhts-dev \
  curl \
  git
 RUN apt-get clean && \
