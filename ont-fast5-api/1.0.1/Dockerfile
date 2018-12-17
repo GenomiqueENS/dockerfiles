@@ -1,5 +1,5 @@
 ############################################################
-# Dockerfile to build htseq container image
+# Dockerfile to build ont-fast5-api container image
 # Based on Ubuntu
 ############################################################
 
