@@ -28,6 +28,9 @@ RUN conda update -c bioconda minimap2
 ##  Install racon
 RUN conda install -c bioconda racon
 
+## Install gffcompare
+RUN conda install -c bioconda gffcompare
+
 ENV PATH=$PATH:/usr/local/go/bin
 
 RUN export GOROOT=/usr/local/go && \
