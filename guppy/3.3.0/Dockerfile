@@ -4,7 +4,7 @@ FROM ubuntu:16.04
 # File Author / Maintainer
 MAINTAINER Charlotte Berthelier <bertheli@biologie.ens.fr>
 
-ARG PACKAGE_VERSION=3.1.5
+ARG PACKAGE_VERSION=3.3.0
 ARG BUILD_PACKAGES="wget apt-transport-https"
 ARG DEBIAN_FRONTEND=noninteractive
 

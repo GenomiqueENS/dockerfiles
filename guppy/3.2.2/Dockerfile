@@ -15,7 +15,6 @@ RUN apt update && \
     apt-get install --yes libzmq5 libhdf5-cpp-11 libcurl4-openssl-dev libssl-dev libhdf5-10 libboost-regex1.58.0 libboost-log1.58.0 libboost-atomic1.58.0 libboost-chrono1.58.0 libboost-date-time1.58.0 libboost-filesystem1.58.0 libboost-program-options1.58.0 libboost-iostreams1.58.0 && \
     dpkg -i *.deb && \
     rm *.deb && \
-    apt-get remove --purge --yes && \
     apt-get autoremove --purge --yes && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
