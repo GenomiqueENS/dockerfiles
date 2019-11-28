@@ -24,6 +24,6 @@ RUN apt-get update && \
     touch /usr/local/bin/rename_trim_galore_output.sh && \
     ln -s /usr/local/bin/rename_trim_galore_output.sh /RenameOutput.sh && \
     chmod +x /usr/local/bin/rename_trim_galore_output.sh && \
-    printf '#/bin/bash\nb=$(basename "$1")\ne=${b#*.}\nd=$(dirname "$1")\nmv "$d/$(basename "$b" .$e)_trimmed.$e" "$2"\n' >> /usr/local/bin/rename_trim_galore_output.sh
+    printf '#/bin/bash\nb=$(basename "$2")\ne=${b#*.}\nd=$(dirname "$2")\nmv "$d/$(basename "$b" .$e)_$1.fq" "$3"\n' >> /usr/local/bin/rename_trim_galore_output.sh
 
 WORKDIR /
