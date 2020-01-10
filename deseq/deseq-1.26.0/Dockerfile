@@ -1,10 +1,10 @@
 ############################################################
 # Dockerfile to build DESeq container images
-# Based on Ubuntu
+# Based on bioconductor
 ############################################################
 
-# Set the base image to Bioconductor v3.10 and R v3.6.1
-FROM bioconductor/release_base2:R.3.6.1_Bioc3.10
+# Set the base image to Bioconductor docker RELEASE_3_10
+FROM bioconductor/bioconductor_docker:RELEASE_3_10
 
 # File Author / Maintainer
 MAINTAINER Charlotte Berthelier
@@ -15,4 +15,5 @@ CMD R --no-save
 # Install DESeq2 package 
 RUN R -e 'BiocManager::install("DESeq2")'
 
-
+# Install FactoMineR package 
+RUN R -e 'BiocManager::install("FactoMineR")'
