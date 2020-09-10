@@ -13,4 +13,4 @@ MAINTAINER Charlotte Berthelier
 CMD R --no-save
 
 # Install DESeq2 and FactoMineR package  
-RUN R -e 'BiocManager::install("DESeq2")' && R -e 'BiocManager::install("FactoMineR")'
+RUN R -e 'BiocManager::install("DESeq2")' && R -e 'BiocManager::install("FactoMineR")' && R -e 'devtools::install_github("kassambara/factoextra")'
